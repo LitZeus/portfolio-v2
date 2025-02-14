@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // This enables static export
+  output: 'export',
+  basePath: '/portfolio-v2',  // Change this to your repository name
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com", pathname: "**" },
