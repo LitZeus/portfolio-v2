@@ -37,10 +37,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build and Export Next.js site
-        run: |
-          pnpm next build
-          pnpm next export
+      - name: Build Next.js site
+        run: pnpm next build
 
       - name: List out directory contents
         run: ls -alh ./out
