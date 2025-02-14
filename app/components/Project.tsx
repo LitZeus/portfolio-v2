@@ -1,10 +1,11 @@
 "use client";
+
 import { motion, useAnimation, useInView } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 import { Chip } from "@heroui/chip";
-
 import { ProjectType, TechnologyType } from "../types";
 import ProjectsSectionAnimations from "../utils/ProjectsSectionAnimations";
 import { GithubSVG, LinkSVG } from "./ui/icons";
@@ -72,22 +73,33 @@ export const Project = (project: ProjectType) => {
           <span className="bg-[#303036] p-2 rounded-md">{icon}</span>
           {title}
         </motion.h2>
-  
+
         {/* Media (Video or Image) */}
         <motion.div
           variants={fadeInUp}
           className="relative w-full rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
         >
-          <video
-            className="w-full h-full object-cover"
-            autoPlay
-            loop
-            playsInline
-            poster={imgUrl}
-            src={videoUrl}
-          />
+          {videoUrl ? (
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              playsInline
+              poster={imgUrl}
+              src={videoUrl}
+            />
+          ) : (
+            <Image
+              src={imgUrl}
+              alt={title}
+              width={800} // Adjust as needed
+              height={600} // Adjust as needed
+              className="rounded-xl w-full object-cover"
+              unoptimized // Required for GitHub Pages deployment
+            />
+          )}
         </motion.div>
-  
+
         {/* Description Box */}
         <motion.div
           variants={fadeInUp}
@@ -98,7 +110,7 @@ export const Project = (project: ProjectType) => {
             <span className="bg-[#303036] p-2 rounded-md">{icon}</span>
             {title}
           </h2>
-  
+
           <p className="text-gray-400 text-lg">{description}</p>
           <div className="flex flex-wrap gap-2 mt-4">
             {technologies.map(
@@ -113,7 +125,7 @@ export const Project = (project: ProjectType) => {
               )
             )}
           </div>
-  
+
           <div className="mt-6 flex gap-4">
             {websiteUrl !== "NONE" && (
               <Link
@@ -125,7 +137,7 @@ export const Project = (project: ProjectType) => {
                 <LinkSVG />
               </Link>
             )}
-  
+
             <Link
               href={githubUrl}
               target="_blank"
@@ -139,6 +151,4 @@ export const Project = (project: ProjectType) => {
       </div>
     </motion.div>
   );
-  
-  
 };

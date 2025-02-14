@@ -21,6 +21,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Manually install pnpm since it's not available by default
       - name: Install pnpm manually
         run: npm install -g pnpm
 
@@ -36,11 +37,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build and Export Next.js site
-        run: |
-          pnpm next build
-          pnpm next export
-          touch ./out/.nojekyll # Prevent GitHub Pages from ignoring files and folders that start with an underscore
+      - name: Build Next.js site
+        run: pnpm next build
+
+      - name: List out directory contents
+        run: ls -alh ./out
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
