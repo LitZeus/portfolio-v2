@@ -29,7 +29,7 @@ export default function Contact() {
         <Card className="col-span-full lg:row-start-1 lg:row-span-1 lg:col-span-1 opacity-0 mobile-animation emailCard">
           <CardBody className="flex flex-row justify-center items-center gap-2">
             <Button
-              onPress={() =>
+              onClick={() =>
                 (location.href = `mailto:${email}?subject=Mail from your Portfolio`)
               }
               startContent={<MailSVG />}
@@ -51,7 +51,7 @@ export default function Contact() {
           >
             <CardBody
               className="flex justify-center items-center"
-              onPress={() => window.open(`${linkedIn}`, "_blank")}
+              onClick={() => window.open(`${linkedIn}`, "_blank")}
             >
               {/* <XSVG /> */}
               <LinkedInSVG />
