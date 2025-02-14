@@ -47,8 +47,8 @@ export default function About() {
       <Card className="col-span-full lg:row-start-2 lg:row-span-2 lg:col-start-2 lg:col-span-1">
         <CardBody className="flex-col items-center justify-center gap-2">
           <Avatar
-            name="TA"
-            src="/portfolio-v2/images/avatar.jpg"
+            name="Tejas Profile"
+            src="https://files.catbox.moe/uvfpfd.jpg"
             className="w-24 h-24 text-large brightness-90"
           />
           <h1 className="text-4xl font-bold">{fullName}</h1>
@@ -100,7 +100,7 @@ export default function About() {
       {/* Vertical Image */}
       <div className="hidden lg:block lg:row-start-1 lg:row-span-2 lg:col-start-3 lg:h-[350px] rounded-xl relative opacity-0 mobile-animation verticalImage">
         <Image
-          src="/portfolio-v2/images/card.jpg"
+          src="https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?q=80&w=1576&auto=format&fit=crop"
           priority={true}
           alt="profile image"
           fill
