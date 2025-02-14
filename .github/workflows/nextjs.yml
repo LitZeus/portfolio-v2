@@ -21,7 +21,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Manually install pnpm before setup-node to avoid missing executable error
+      # Manually install pnpm since it's not available by default
       - name: Install pnpm manually
         run: npm install -g pnpm
 
@@ -32,21 +32,21 @@ jobs:
           cache: "pnpm"
 
       - name: Verify pnpm installation
-        run: pnpm --version  # This ensures pnpm is installed and prints the version
+        run: pnpm --version
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Build Next.js site
-        run: pnpm next build  # Build the site (no need for next export anymore)
+        run: pnpm next build
 
       - name: List out directory contents
-        run: ls -alh ./out  # Check if the out directory is created
+        run: ls -alh ./out
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out  # The folder where the static files are exported
+          path: ./out
 
   deploy:
     environment:
