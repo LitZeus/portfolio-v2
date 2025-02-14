@@ -14,7 +14,7 @@ import IconComponent from "../ui/IconComponent";
 
 const { fullName, profession, whoAmI, quote } = whoAmIData;
 
-export default function About() {
+export const Home = () => {
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 1024px)");
     const handleMediaQuery = (e: MediaQueryListEvent | MediaQueryList) => {

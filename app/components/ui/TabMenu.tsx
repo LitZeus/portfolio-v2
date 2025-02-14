@@ -1,6 +1,6 @@
 "use client";
+import { Contact, Home, Projects } from "@/app/components/tabSection";
 import { Tab, Tabs } from "@heroui/tabs";
-import { Contact, Home, Projects } from "../tabSection";
 
 export default function TabMenu() {
   return (
