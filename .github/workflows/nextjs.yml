@@ -1,0 +1,60 @@
+name: Deploy Next.js site to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Manually install pnpm before setup-node to avoid missing executable error
+      - name: Install pnpm manually
+        run: npm install -g pnpm
+
+      - name: Setup Node.js with PNPM
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Verify pnpm installation
+        run: pnpm --version  # This ensures pnpm is installed and prints the version
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Next.js site
+        run: pnpm next build  # Build the site (no need for next export anymore)
+
+      - name: List out directory contents
+        run: ls -alh ./out  # Check if the out directory is created
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out  # The folder where the static files are exported
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
