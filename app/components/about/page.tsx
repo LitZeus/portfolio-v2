@@ -109,8 +109,8 @@ export default function About() {
       </div>
 
       {/* Professional Highlights */}
-      <Card className="col-span-full lg:row-start-4 lg:row-span-1 lg:col-start-2 lg:col-span-2 opacity-0 highlightContent">
-        <svg
+      <Card className="col-span-full lg:row-start-4 lg:row-span-1 lg:col-start-2 lg:col-span-2 opacity-0 mobile-animation highlightContent">
+      <svg
           xmlns="http://www.w3.org/2000/svg"
           className="hidden lg:block icon icon-tabler icon-tabler-timeline absolute top-0 -right-7"
           width="200"
