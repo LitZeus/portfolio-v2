@@ -97,7 +97,7 @@ export const Form = () => {
         id="name"
         type="text"
         label="Name"
-        placeholder="John Doe"
+        placeholder=""
         isInvalid={isInvalidName}
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -109,7 +109,7 @@ export const Form = () => {
         name="email"
         id="email"
         label="Email"
-        placeholder="john.doe@example.com"
+        placeholder=""
         isInvalid={isInvalidEmail}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
