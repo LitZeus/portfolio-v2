@@ -11,7 +11,7 @@ import { contactData } from "@/app/utils";
 import contactAnimation from "@/app/utils/contactSectionAnimations";
 
 export default function Contact() {
-  const { email, github, x, linkedIn } = contactData;
+  const { email, github, linkedIn } = contactData;
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 1024px)");
@@ -60,7 +60,7 @@ export default function Contact() {
 
         <Card
           isHoverable
-          className="col-span-full lg:row-start-1 lg:row-span-2 lg:col-start-2 cursor-pointer opacity-0 mobile-animation githubCard "
+          className="col-span-full lg:row-start-1 lg:row-span-2 lg:col-start-2 cursor-pointer opacity-0 mobile-animation githubCard"
         >
           <Link
             href={github}
@@ -71,14 +71,14 @@ export default function Contact() {
             <CardBody className="flex justify-center items-center gap-2">
               <GithubSVG />
               <h1 className="text-3xl font-bold">Github Profile</h1>
-              <p className="text-xl text-gray-400  text-center">
+              <p className="text-xl text-gray-400 text-center">
                 Find more of my repositories
               </p>
             </CardBody>
           </Link>
         </Card>
 
-        <div className="col-span-full mt-8 opacity-0 mobile-animation form">
+        <div className="col-span-full mt-8">
           <Form />
         </div>
       </div>

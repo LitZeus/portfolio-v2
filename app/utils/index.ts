@@ -60,3 +60,9 @@ export const techonologyIconList = [
   { name: "Gen AI", icon: SiOpenai, color: "text-green-500" }
 ];
 
+export const contactData = {
+  email: "me.tejasathalye@gmail.com",
+  github: "https://github.com/tejasathalye",
+  linkedIn: "https://www.linkedin.com/in/tejas-athalye",
+};
+

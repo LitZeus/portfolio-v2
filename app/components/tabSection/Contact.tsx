@@ -1,13 +1,11 @@
 "use client";
-import Link from "next/link";
 import { useEffect } from "react";
 
-import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 
 import { contactData } from "@/app/utils";
 import contactAnimation from "../../utils/contactSectionAnimations";
-import { Form } from "../Form";
+import Form from "../Form";
 import { GithubSVG, LinkedInSVG, MailSVG } from "../ui/icons";
 
 export const Contact = () => {
@@ -24,62 +22,47 @@ export const Contact = () => {
   }, []);
 
   return (
-    <div className="grid grid-rows-2 grid-cols-2 gap-5 max-w-2xl mx-auto">
-      <Card className="col-span-full lg:row-start-1 lg:row-span-1 lg:col-span-1 opacity-0 mobile-animation emailCard">
-        <CardBody className="flex flex-row justify-center items-center gap-2">
-          <Button
-            onClick={() =>
-              (location.href = `mailto:${email}?subject=Mail from your Portfolio`)
-            }
-            startContent={<MailSVG />}
-          >
-            {email}
-          </Button>
+    <div className="flex flex-col gap-6">
+      <Card className="opacity-0 mobile-animation contactCard">
+        <CardBody className="gap-4">
+          <div className="text-3xl font-bold">Get in Touch</div>
+          <div className="text-lg text-gray-400">
+            {contactData.description}
+          </div>
         </CardBody>
       </Card>
 
-      <Card
-        isHoverable
-        className="col-span-full lg:row-start-2 lg:row-span-1 lg:col-span-1 cursor-pointer opacity-0 mobile-animation linkedInCard"
-      >
-        <Link
-          href={linkedIn}
-          rel="noopener noreferrer"
-          target="_blank"
-          className="min-h-full flex justify-center items-center"
-        >
-          <CardBody
-            className="flex justify-center items-center"
-            onClick={() => window.open(`${linkedIn}`, "_blank")}
-          >
-            <LinkedInSVG />
-          </CardBody>
-        </Link>
+      <Card className="opacity-0 mobile-animation contactFormCard">
+        <CardBody className="gap-4">
+          <Form />
+        </CardBody>
       </Card>
 
-      <Card
-        isHoverable
-        className="col-span-full lg:row-start-1 lg:row-span-2 lg:col-start-2 cursor-pointer opacity-0 mobile-animation githubCard "
-      >
-        <Link
-          href={github}
-          rel="noopener noreferrer"
-          target="_blank"
-          className="min-h-full flex justify-center items-center"
-        >
-          <CardBody className="flex justify-center items-center gap-2">
-            <GithubSVG />
-            <h1 className="text-3xl font-bold">Github Profile</h1>
-            <p className="text-xl text-gray-400  text-center">
-              Find more of my repositories
-            </p>
-          </CardBody>
-        </Link>
+      <Card className="opacity-0 mobile-animation contactLinksCard">
+        <CardBody className="gap-4">
+          <div className="text-3xl font-bold">Connect with Me</div>
+          <div className="flex flex-wrap gap-4">
+            {contactData.socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-blue hover:text-blue/80 transition-colors"
+              >
+                {link.name === "GitHub" ? (
+                  <GithubSVG />
+                ) : link.name === "LinkedIn" ? (
+                  <LinkedInSVG />
+                ) : (
+                  <MailSVG />
+                )}
+                <span>{link.name}</span>
+              </a>
+            ))}
+          </div>
+        </CardBody>
       </Card>
-
-      <div className="col-span-full mt-8 opacity-0 mobile-animation form">
-        <Form />
-      </div>
     </div>
   );
 };
