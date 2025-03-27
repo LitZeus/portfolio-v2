@@ -1,138 +1,74 @@
-import { FormEvent, useEffect, useState } from "react";
-
+"use client";
+import emailjs from "@emailjs/browser";
 import { Button } from "@heroui/button";
-import { Input, Textarea } from "@heroui/input";
-import { toast, Toaster } from "sonner";
+import { Input } from "@heroui/input";
+import { useState } from "react";
 
-import emailjs from '@emailjs/browser';
-import { CircleCheckSVG, CircleXSVG } from "./ui/icons";
-
-// Initialize EmailJS with your public key
-emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
-
-interface FormData {
-  from_name: string;
-  from_email: string;
-  message: string;
-}
-
-export const Form = () => {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+export default function Form() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [isInvalidName, setIsInvalidName] = useState<boolean>(false);
-  const [isInvalidEmail, setIsInvalidEmail] = useState<boolean>(false);
-  const [isInvalidMessage, setIsInvalidMessage] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (name !== "") setIsInvalidName(false);
-    if (
-      email.match(
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-      )
-    )
-      setIsInvalidEmail(false);
-    if (message !== "") setIsInvalidMessage(false);
-  }, [name, email, message]);
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (name === "") setIsInvalidName(true);
-    if (email === "") setIsInvalidEmail(true);
-    if (message === "") setIsInvalidMessage(true);
-
-    if (!name || !email || !message || isSubmitting) {
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
-      const templateParams: FormData = {
+      const formData = {
         from_name: name,
         from_email: email,
-        message: message,
+        message: message
       };
 
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        templateParams
+        formData
       );
 
       setName("");
       setEmail("");
       setMessage("");
-      
-      toast("Message sent successfully! I'll get back to you soon.", {
-        className: "my-classname",
-        duration: 3000,
-        icon: <CircleCheckSVG />,
-      });
-    } catch (error: unknown) {
-      const errorMessage = error instanceof Error ? error.message : 'Failed to send message';
-      toast(errorMessage, {
-        className: "my-classname",
-        duration: 3000,
-        icon: <CircleXSVG />,
-      });
+      alert("Message sent successfully!");
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <form
-      className="flex flex-col gap-4"
-      onSubmit={(e) => handleSubmit(e)}
-    >
-      <h2 className="text-3xl font-bold">Let's get in touch ;)</h2>
-      <p className="text-lg text-gray-400">
-        You can also get in touch with me through this form below.
-      </p>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <Input
-        id="name"
         type="text"
-        label="Name"
-        placeholder=""
-        isInvalid={isInvalidName}
+        placeholder="Your Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        errorMessage={isInvalidName && "Please enter your name"}
-        disabled={isSubmitting}
+        required
       />
       <Input
         type="email"
-        name="email"
-        id="email"
-        label="Email"
-        placeholder=""
-        isInvalid={isInvalidEmail}
+        placeholder="Your Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        errorMessage={isInvalidEmail && "Please enter a valid email"}
-        disabled={isSubmitting}
+        required
       />
-      <Textarea
-        id="message"
+      <Input
         type="text"
-        label="Message"
-        placeholder="Enter your message here"
-        minRows={4}
-        isInvalid={isInvalidMessage}
+        placeholder="Your Message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        errorMessage={isInvalidMessage && "Please enter your message"}
-        disabled={isSubmitting}
+        required
       />
-      <Button type="submit" disabled={isSubmitting}>
+      <Button
+        type="submit"
+        disabled={isSubmitting}
+        className="bg-blue text-white hover:bg-blue/90"
+      >
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
-
-      <Toaster theme="dark" />
     </form>
   );
-};
+}
