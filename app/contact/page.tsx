@@ -5,10 +5,10 @@ import { useEffect } from "react";
 import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 
+import { Form } from "@/app/components/Form";
+import { GithubSVG, LinkedInSVG, MailSVG } from "@/app/components/ui/icons";
 import { contactData } from "@/app/utils";
-import { Form } from "../components/Form";
-import { GithubSVG, LinkedInSVG, MailSVG } from "../components/ui/icons/";
-import contactAnimation from "../utils/contactSectionAnimations";
+import contactAnimation from "@/app/utils/contactSectionAnimations";
 
 export default function Contact() {
   const { email, github, x, linkedIn } = contactData;
@@ -53,7 +53,6 @@ export default function Contact() {
               className="flex justify-center items-center"
               onClick={() => window.open(`${linkedIn}`, "_blank")}
             >
-              {/* <XSVG /> */}
               <LinkedInSVG />
             </CardBody>
           </Link>

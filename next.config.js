@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/portfolio-v2', // Replace with your repository name
-  assetPrefix: '/portfolio-v2/', // Ensure this matches the basePath
   images: {
-    unoptimized: true,
+    domains: ['files.catbox.moe', 'images.unsplash.com'],
+    unoptimized: process.env.NODE_ENV === 'production',
   },
+  ...(process.env.NODE_ENV === 'production' ? {
+    output: 'export',
+    basePath: '/portfolio-v2',
+    assetPrefix: '/portfolio-v2/',
+  } : {}),
 };
 
 module.exports = nextConfig;
