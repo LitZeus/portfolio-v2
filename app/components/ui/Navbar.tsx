@@ -58,7 +58,7 @@ export const NavbarSection = () => {
               "bg-content2",
               "rounded-xl",
               "h-11",
-              "mt-6", // Increased gap above the navbar
+              "mt-6",
               "flex",
               "justify-center",
               "w-auto",

@@ -11,7 +11,6 @@ import { useEffect } from "react";
 import { FaDownload } from "react-icons/fa";
 import { Highlights } from "./components/Highlights";
 import IconComponent from "./components/ui/IconComponent";
-import { ScrollToTop } from "./components/ui/ScrollToTop";
 import { SocialLinks } from "./components/ui/SocialLinks";
 
 const { fullName, profession, whoAmI, quote } = whoAmIData;
@@ -45,11 +44,10 @@ export default function Home() {
 
   return (
     <main className="p-1.5 sm:p-4 pb-6 sm:pb-12 max-w-6xl m-auto overflow-hidden 2xl:overflow-visible relative min-h-screen">
-      <ScrollToTop />
       <div className="w-full md:w-[90%] max-w-[95%] md:max-w-[74%] mx-auto grid grid-cols-4 lg:grid-cols-3 gap-2 sm:gap-5">
         {/* Mobile Hero Section */}
         <div className="lg:hidden col-span-full flex flex-col items-center">
-          <div className="relative w-full h-[400px] sm:h-[450px]">
+          <div className="relative w-full h-[350px] sm:h-[400px] rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/80 z-10" />
             <Image
               src="https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?q=80&w=1576&auto=format&fit=crop"
@@ -181,7 +179,7 @@ export default function Home() {
 
         {/* Profession */}
         <Card className="hidden lg:block col-span-full lg:row-start-2 lg:col-start-1 lg:col-span-1 bg-blue opacity-0 mobile-animation professionCard">
-          <CardBody className="justify-center items-center">
+          <CardBody className="h-full flex items-center justify-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-center">
               {profession}
             </h2>
@@ -201,7 +199,7 @@ export default function Home() {
         <Card className="hidden lg:block col-span-full lg:row-start-3 lg:row-span-2 lg:col-start-1 lg:col-span-1 opacity-0 mobile-animation technologyIconList">
           <CardBody className="gap-4">
             <h2 className="text-3xl font-bold">
-              Technologies I have worked with
+              Technologies I have worked with:
             </h2>
             <div className="flex flex-wrap justify-center lg:justify-center gap-x-10 gap-y-6">
               {techonologyIconList.map(({ name, icon, color }) => (
