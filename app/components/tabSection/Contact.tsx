@@ -12,16 +12,15 @@ interface SocialLink {
 }
 
 export const Contact = () => {
-  const mq = window.matchMedia("(min-width: 1024px)");
-
   useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
     if (!mq.matches) return contactAnimation.mobileAnimation();
 
     contactAnimation.emailAnimation();
     contactAnimation.githubAnimation();
     contactAnimation.linkedInAnimation();
     contactAnimation.formAnimation();
-  }, []);
+  }, [window.matchMedia("(min-width: 1024px)").matches]);
 
   return (
     <div className="flex flex-col gap-6">

@@ -1,6 +1,6 @@
 "use client";
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
+import React, { useState } from "react";
 
 // Initialize EmailJS with public key
 emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
@@ -60,7 +60,7 @@ export function Form() {
         )}
         {success && (
           <div className="bg-green-500/10 border border-green-500/50 text-green-500 px-4 py-2 rounded-md text-sm">
-            Message sent successfully! I'll get back to you soon.
+            Message sent successfully! I&apos;ll get back to you as soon as possible.
           </div>
         )}
         <div className="relative">

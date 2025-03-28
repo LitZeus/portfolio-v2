@@ -114,13 +114,13 @@ export const Project = (project: ProjectType) => {
           <p className="text-gray-400 text-base sm:text-lg">{description}</p>
           <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3 sm:mt-4">
             {technologies.map(
-              ({ name, icon }: TechnologyType, index: number) => (
+              ({ name, color }: TechnologyType, index: number) => (
                 <Chip
                   key={`technology-item-${index}`}
                   size="sm"
-                  className="bg-[#2A2A2E] text-gray-300 hover:bg-[#3A3A3E] transition-colors text-xs sm:text-sm"
+                  className="bg-[#2A2A2E] text-gray-300 hover:bg-[#3A3A3E] transition-colors"
                 >
-                  <span className="flex items-center gap-1 sm:gap-2">{name}</span>
+                  <span className="flex items-center gap-2">{name}</span>
                 </Chip>
               )
             )}

@@ -1,5 +1,5 @@
 import { IconProps } from "@/app/types";
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 
 interface IconComponentProps {
   icon: React.ComponentType<IconProps>;
