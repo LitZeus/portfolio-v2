@@ -1,19 +1,71 @@
+import { FaGlobe, FaLaptopCode, FaRobot } from "react-icons/fa";
+import { GiArtificialIntelligence } from "react-icons/gi";
+import { MdOutlineHealthAndSafety } from "react-icons/md";
 import {
-  ShadcnLandingSVG
+    ShadcnLandingSVG
 } from "../components/ui/icons";
 import { ProjectType } from "../types";
 
 export const ProjectList: ProjectType[] = [
   {
-    icon: <ShadcnLandingSVG />,
-    title: "Detection of Varicose Veins Using YOLO",
-    subtitle: "AI-powered medical diagnosis",
-    technologies: [],
-    description: "An AI-powered system for early diagnosis and continuous monitoring of varicose veins using YOLO deep learning algorithm.",
-    imgUrl: "/portfolio-v2/images/vv-detection.jpeg",
+    icon: <GiArtificialIntelligence />,
+    title: "Violence & Vandalism Detection",
+    subtitle: "Computer Vision",
+    description:
+      "A deep learning model that detects violence and vandalism in surveillance footage. The model uses a combination of CNN and LSTM networks to process video frames and classify them as violent or non-violent.",
+    imgUrl: "/images/vv-detection.jpeg",
     videoUrl: "",
-    githubUrl: "https://github.com/LitZeus/VV-detection",
+    technologies: [],
+    githubUrl: "https://github.com/tejas-athalye/Violence-Detection",
     websiteUrl: "",
+  },
+  {
+    icon: <FaRobot />,
+    title: "Autonomous Drone Navigation",
+    subtitle: "Robotics & Computer Vision",
+    description:
+      "An autonomous drone navigation system that uses computer vision and deep learning to navigate through indoor environments. The system uses a combination of SLAM and deep learning for obstacle avoidance and path planning.",
+    imgUrl: "/images/drone-nav.jpeg",
+    videoUrl: "",
+    technologies: [],
+    githubUrl: "https://github.com/tejas-athalye/Autonomous-Drone-Navigation",
+    websiteUrl: "",
+  },
+  {
+    icon: <MdOutlineHealthAndSafety />,
+    title: "Health Monitoring System",
+    subtitle: "IoT & Machine Learning",
+    description:
+      "A real-time health monitoring system that uses IoT sensors to collect vital signs and machine learning to predict potential health risks. The system includes a web dashboard for monitoring and alerts.",
+    imgUrl: "/images/health-monitor.jpeg",
+    videoUrl: "",
+    technologies: [],
+    githubUrl: "https://github.com/tejas-athalye/Health-Monitoring-System",
+    websiteUrl: "",
+  },
+  {
+    icon: <FaLaptopCode />,
+    title: "Code Review Assistant",
+    subtitle: "Natural Language Processing",
+    description:
+      "An AI-powered code review assistant that uses natural language processing to analyze code changes and provide suggestions for improvements. The system integrates with GitHub and provides automated code reviews.",
+    imgUrl: "/images/code-review.jpeg",
+    videoUrl: "",
+    technologies: [],
+    githubUrl: "https://github.com/tejas-athalye/Code-Review-Assistant",
+    websiteUrl: "",
+  },
+  {
+    icon: <FaGlobe />,
+    title: "Portfolio Website",
+    subtitle: "Web Development",
+    description:
+      "A modern, responsive portfolio website built with Next.js and TypeScript. Features include dark mode, animations, and a contact form. The website is optimized for performance and SEO.",
+    imgUrl: "/images/portfolio.jpeg",
+    videoUrl: "",
+    technologies: [],
+    githubUrl: "https://github.com/tejas-athalye/tejas-athalye-portfolio",
+    websiteUrl: "https://tejas-athalye.github.io/tejas-athalye-portfolio/",
   },
   {
     icon: <ShadcnLandingSVG />,
@@ -21,7 +73,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "AI-driven recruitment platform",
     technologies: [],
     description: "An AI-driven swipe-based platform connecting job seekers, interns, and recruiters for efficient matchmaking using deep learning and recommendation models.",
-    imgUrl: "/portfolio-v2/images/swipehire.jpeg",
+    imgUrl: "/images/swipehire.jpeg",
     videoUrl: "",
     githubUrl: "",
     websiteUrl: "",
@@ -32,7 +84,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "Blockchain-powered ticketing",
     technologies: [],
     description: "A blockchain-powered ticketing system using NFTs for secure, verifiable event access and collectible tickets.",
-    imgUrl: "/portfolio-v2/images/nftix.jpeg",
+    imgUrl: "/images/nftix.jpeg",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/NFTix",
     websiteUrl: "",
@@ -43,7 +95,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "AI-driven movie recommendations",
     technologies: [],
     description: "An AI-powered movie recommendation system using NLP, cosine similarity, and sentiment analysis to enhance user experience.",
-    imgUrl: "/portfolio-v2/images/cinesenseai.jpeg",
+    imgUrl: "/images/cinesenseai.jpeg",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/CineSenseAI",
     websiteUrl: "",
@@ -54,7 +106,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "Productivity browser extension",
     technologies: [],
     description: "A browser extension to save, organize, and manage open tabs into named groups for better productivity.",
-    imgUrl: "/portfolio-v2/images/tabit-ss.png",
+    imgUrl: "/images/tabit-ss.png",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/TabIt",
     websiteUrl: "",
@@ -65,7 +117,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "Generative AI document assistant",
     technologies: [],
     description: "A generative AI-powered tool for interactive communication with PDF documents using Retrieval-Augmented Generation (RAG).",
-    imgUrl: "/portfolio-v2/images/chatdocsai.jpeg",
+    imgUrl: "/images/chatdocsai.jpeg",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/ChatDocs-AI",
     websiteUrl: "",
@@ -76,10 +128,9 @@ export const ProjectList: ProjectType[] = [
     subtitle: "AI-driven video authentication",
     technologies: [],
     description: "A digital forensic tool for detecting video tampering, deepfakes, and verifying authenticity using metadata analysis and frame inspection.",
-    imgUrl: "/portfolio-v2/images/vidforensics.jpeg",
+    imgUrl: "/images/vidforensics.jpeg",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/VidForensicsTool",
     websiteUrl: "",
   },
-  
 ];

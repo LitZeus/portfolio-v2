@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 import { Chip } from "@heroui/chip";
 import { ProjectType, TechnologyType } from "../types";
 import ProjectsSectionAnimations from "../utils/ProjectsSectionAnimations";
+import { getImagePath } from "../utils/getImagePath";
 import { GithubSVG, LinkSVG } from "./ui/icons";
 
 export const Project = (project: ProjectType) => {
@@ -56,6 +57,8 @@ export const Project = (project: ProjectType) => {
     },
   };
 
+  const imageSrc = getImagePath(imgUrl);
+
   return (
     <motion.div
       ref={ref}
@@ -85,12 +88,12 @@ export const Project = (project: ProjectType) => {
               autoPlay
               loop
               playsInline
-              poster={imgUrl}
+              poster={imageSrc}
               src={videoUrl}
             />
           ) : (
             <Image
-              src={imgUrl}
+              src={imageSrc}
               alt={title}
               width={800}
               height={600}
