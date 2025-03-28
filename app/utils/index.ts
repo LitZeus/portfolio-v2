@@ -6,24 +6,24 @@ export * from "./whoAmIData";
 
 import { FaAws, FaLinux, FaMicrosoft } from "react-icons/fa";
 import {
-    SiDocker,
-    SiExpress,
-    SiFlask,
-    SiGit,
-    SiGithub,
-    SiJavascript,
-    SiKubernetes,
-    SiMongodb,
-    SiNextdotjs,
-    SiOpenai,
-    SiPostgresql,
-    SiPostman,
-    SiPython,
-    SiReact,
-    SiTailwindcss,
-    SiTypescript,
-    SiVercel,
-    SiVuedotjs
+  SiDocker,
+  SiExpress,
+  SiFlask,
+  SiGit,
+  SiGithub,
+  SiJavascript,
+  SiKubernetes,
+  SiMongodb,
+  SiNextdotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiPostman,
+  SiPython,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+  SiVuedotjs
 } from "react-icons/si";
 
 export const techonologyIconList = [
@@ -62,7 +62,7 @@ export const techonologyIconList = [
 
 export const contactData = {
   email: "me.tejasathalye@gmail.com",
-  github: "https://github.com/tejasathalye",
-  linkedIn: "https://www.linkedin.com/in/tejas-athalye",
+  github: "https://github.com/LitZeus",
+  linkedIn: "https://linkedin.com/in/tejasathalye",
 };
 

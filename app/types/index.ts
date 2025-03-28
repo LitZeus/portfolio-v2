@@ -1,18 +1,17 @@
-import { FC } from "react";
-
 export * from "./contactDataType";
 export * from "./highlightsType";
-export * from "./iconT";
 export * from "./project";
 
-interface IconProps {
+export interface IconProps {
   color?: string;
   size?: number;
 }
 
+export type IconComponent = ({ color, size }: IconProps) => JSX.Element;
+
 export type iconType = {
   name: string;
-  icon: FC<IconProps>;
+  icon: IconComponent;
   color: string;
 };
 

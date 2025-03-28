@@ -1,26 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const socialLinks = [
   {
     name: "GitHub",
     icon: FaGithub,
-    url: "https://github.com/yourusername",
+    url: "https://github.com/LitZeus",
     color: "hover:text-gray-900 dark:hover:text-white",
   },
   {
     name: "LinkedIn",
     icon: FaLinkedin,
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://linkedin.com/in/tejasathalye",
     color: "hover:text-blue-600",
   },
   {
-    name: "Twitter",
-    icon: FaTwitter,
-    url: "https://twitter.com/yourusername",
-    color: "hover:text-blue-400",
+    name: "Instagram",
+    icon: FaInstagram,
+    url: "https://www.instagram.com/connectingthepixels/",
+    color: "hover:text-pink-600",
   },
 ];
 

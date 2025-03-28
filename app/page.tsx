@@ -1,5 +1,4 @@
 "use client";
-import { iconType } from "@/app/types";
 import { highlightsType } from "@/app/types/highlightsType";
 import { techonologyIconList, whoAmIData } from "@/app/utils";
 import aboutAnimation from "@/app/utils/aboutSectionAnimations";
@@ -87,10 +86,10 @@ export default function Home() {
               Technologies
             </h2>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-              {techonologyIconList.map(({ name, icon }: iconType) => (
+              {techonologyIconList.map(({ name, icon, color }) => (
                 <Tooltip key={`technology-item-${name}`} content={name}>
                   <div className="flex flex-col items-center gap-1 p-2 rounded-lg bg-blue/5 hover:bg-blue/10 transition-colors">
-                    <IconComponent icon={icon} />
+                    <IconComponent icon={icon} color={color} />
                     <span className="text-xs font-medium">{name}</span>
                   </div>
                 </Tooltip>
@@ -172,9 +171,9 @@ export default function Home() {
               Technologies I have worked with
             </h2>
             <div className="flex flex-wrap justify-center lg:justify-center gap-x-10 gap-y-6">
-              {techonologyIconList.map(({ name, icon }: iconType) => (
+              {techonologyIconList.map(({ name, icon, color }) => (
                 <Tooltip key={`technology-item-${name}`} content={name}>
-                  <IconComponent icon={icon} />
+                  <IconComponent icon={icon} color={color} />
                 </Tooltip>
               ))}
             </div>
