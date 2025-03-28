@@ -1,13 +1,29 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['files.catbox.moe', 'images.unsplash.com'],
-    unoptimized: true,
-  },
   output: 'export',
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'files.catbox.moe',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
   basePath: '/tejas-athalye-portfolio',
   assetPrefix: '/tejas-athalye-portfolio/',
   trailingSlash: true,
+  distDir: 'dist',
+  // This is important for GitHub Pages
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
 };
 
 module.exports = nextConfig;

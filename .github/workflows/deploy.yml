@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -28,20 +28,27 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm install sharp
 
       - name: Build Next.js site
+        env:
+          NEXT_PUBLIC_BASE_PATH: /tejas-athalye-portfolio
         run: |
           npm run build
-          touch out/.nojekyll
+          touch dist/.nojekyll
+          cp dist/index.html dist/404.html
 
-      - name: List out directory contents
-        run: ls -alh ./out
+      - name: Fix paths
+        run: |
+          echo "/* /index.html 200" > dist/_redirects
+          echo "tejas-athalye-portfolio.litzeus.github.io" > dist/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./dist
 
   deploy:
     environment:
