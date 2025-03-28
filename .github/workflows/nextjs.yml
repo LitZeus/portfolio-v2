@@ -21,24 +21,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Manually install pnpm since it's not available by default
-      - name: Install pnpm manually
-        run: npm install -g pnpm
-
-      - name: Setup Node.js with PNPM
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "pnpm"
-
-      - name: Verify pnpm installation
-        run: pnpm --version
+          cache: "npm"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Build Next.js site
-        run: pnpm next build
+        run: npm run build
 
       - name: List out directory contents
         run: ls -alh ./out
