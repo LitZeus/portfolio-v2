@@ -50,7 +50,7 @@ export function Form() {
 
   return (
     <div className="mt-16">
-      <h1 className="text-3xl font-bold mb-2">Let's get in touch ;)</h1>
+      <h1 className="text-3xl font-bold mb-2">Let&apos;s get in touch ;)</h1>
       <p className="text-gray-400 mb-4">You can also get in touch with me through this form below.</p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 opacity-0 mobile-animation form">
         {error && (

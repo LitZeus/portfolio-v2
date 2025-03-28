@@ -114,7 +114,7 @@ export const Project = (project: ProjectType) => {
           <p className="text-gray-400 text-base sm:text-lg">{description}</p>
           <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3 sm:mt-4">
             {technologies.map(
-              ({ name, color }: TechnologyType, index: number) => (
+              ({ name }: TechnologyType, index: number) => (
                 <Chip
                   key={`technology-item-${index}`}
                   size="sm"

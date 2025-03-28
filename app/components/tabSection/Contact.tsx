@@ -6,11 +6,6 @@ import contactAnimation from "../../utils/contactSectionAnimations";
 import { Form } from "../Form";
 import { GithubSVG, LinkedInSVG, MailSVG } from "../ui/icons";
 
-interface SocialLink {
-  name: string;
-  url: string;
-}
-
 export const Contact = () => {
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 1024px)");
@@ -20,7 +15,7 @@ export const Contact = () => {
     contactAnimation.githubAnimation();
     contactAnimation.linkedInAnimation();
     contactAnimation.formAnimation();
-  }, [window.matchMedia("(min-width: 1024px)").matches]);
+  }, []);
 
   return (
     <div className="flex flex-col gap-6">
@@ -28,7 +23,7 @@ export const Contact = () => {
         <CardBody className="gap-4">
           <div className="text-3xl font-bold">Get in Touch</div>
           <div className="text-lg text-gray-400">
-            Let's connect! Feel free to reach out for collaborations or just a friendly chat.
+            Let&apos;s connect! Feel free to reach out for collaborations or just a friendly chat.
           </div>
         </CardBody>
       </Card>
