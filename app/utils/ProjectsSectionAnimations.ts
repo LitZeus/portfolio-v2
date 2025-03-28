@@ -71,11 +71,13 @@ const mobileAnimation = () => {
   });
 };
 
-export default {
+const ProjectsSectionAnimations = {
+  mobileAnimation,
   titleAnimation,
   videoAnimation,
   descriptionAnimation,
   websiteUrlAnimation,
   githubUrlAnimation,
-  mobileAnimation,
 };
+
+export default ProjectsSectionAnimations;

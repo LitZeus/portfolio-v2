@@ -4,7 +4,7 @@ import { iconType } from ".";
 export type TechnologyType = iconType;
 
 export type ProjectType = {
-  icon: React.ReactElement<any>;
+  icon: React.ReactElement<React.SVGProps<SVGSVGElement>>;
   title: string;
   subtitle: string;
   technologies: TechnologyType[];

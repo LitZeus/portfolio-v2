@@ -96,12 +96,14 @@ const mobileAnimation = () => {
   });
 };
 
-export default {
+const aboutSectionAnimations = {
+  mobileAnimation,
   whoAmIAnimation,
   professionAnimation,
   quoteAnimation,
   techonologyIconListAnimation,
   verticalImageAnimation,
   highlightContentAnimation,
-  mobileAnimation,
 };
+
+export default aboutSectionAnimations;

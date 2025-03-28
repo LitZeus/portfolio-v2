@@ -1,4 +1,4 @@
-import { inView, animate } from "motion";
+import { animate, inView } from "motion";
 
 const emailAnimation = () => {
   const emailCard = document.querySelectorAll(".emailCard");
@@ -65,10 +65,12 @@ const mobileAnimation = () => {
   });
 };
 
-export default {
+const contactSectionAnimations = {
+  mobileAnimation,
   emailAnimation,
   githubAnimation,
   linkedInAnimation,
   formAnimation,
-  mobileAnimation,
 };
+
+export default contactSectionAnimations;
