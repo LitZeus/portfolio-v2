@@ -3,6 +3,8 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    loader: 'custom',
+    loaderFile: './app/image-loader.ts',
     remotePatterns: [
       {
         protocol: 'https',

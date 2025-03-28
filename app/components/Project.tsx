@@ -6,9 +6,9 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 import { Chip } from "@heroui/chip";
+import imageLoader from "../image-loader";
 import { ProjectType, TechnologyType } from "../types";
 import ProjectsSectionAnimations from "../utils/ProjectsSectionAnimations";
-import { getImagePath } from "../utils/getImagePath";
 import { GithubSVG, LinkSVG } from "./ui/icons";
 
 export const Project = (project: ProjectType) => {
@@ -57,8 +57,6 @@ export const Project = (project: ProjectType) => {
     },
   };
 
-  const imageSrc = getImagePath(imgUrl);
-
   return (
     <motion.div
       ref={ref}
@@ -88,17 +86,17 @@ export const Project = (project: ProjectType) => {
               autoPlay
               loop
               playsInline
-              poster={imageSrc}
+              poster={imgUrl}
               src={videoUrl}
             />
           ) : (
             <Image
-              src={imageSrc}
+              src={imgUrl}
               alt={title}
               width={800}
               height={600}
               className="rounded-xl w-full object-cover"
-              unoptimized
+              loader={imageLoader}
             />
           )}
         </motion.div>

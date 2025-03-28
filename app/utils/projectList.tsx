@@ -1,5 +1,5 @@
 import {
-    ShadcnLandingSVG
+  ShadcnLandingSVG
 } from "../components/ui/icons";
 import { ProjectType } from "../types";
 
@@ -10,7 +10,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "AI-powered medical diagnosis",
     technologies: [],
     description: "An AI-powered system for early diagnosis and continuous monitoring of varicose veins using YOLO deep learning algorithm.",
-    imgUrl: "/images/vv-detection.jpeg",
+    imgUrl: "/tejas-athalye-portfolio/images/vv-detection.jpeg",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/VV-detection",
     websiteUrl: "",
@@ -21,7 +21,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "AI-driven recruitment platform",
     technologies: [],
     description: "An AI-driven swipe-based platform connecting job seekers, interns, and recruiters for efficient matchmaking using deep learning and recommendation models.",
-    imgUrl: "/images/swipehire.jpeg",
+    imgUrl: "/tejas-athalye-portfolio/images/swipehire.jpeg",
     videoUrl: "",
     githubUrl: "",
     websiteUrl: "",
@@ -32,7 +32,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "Blockchain-powered ticketing",
     technologies: [],
     description: "A blockchain-powered ticketing system using NFTs for secure, verifiable event access and collectible tickets.",
-    imgUrl: "/images/nftix.jpeg",
+    imgUrl: "/tejas-athalye-portfolio/images/nftix.jpeg",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/NFTix",
     websiteUrl: "",
@@ -43,7 +43,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "AI-driven movie recommendations",
     technologies: [],
     description: "An AI-powered movie recommendation system using NLP, cosine similarity, and sentiment analysis to enhance user experience.",
-    imgUrl: "/images/cinesenseai.jpeg",
+    imgUrl: "/tejas-athalye-portfolio/images/cinesenseai.jpeg",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/CineSenseAI",
     websiteUrl: "",
@@ -54,7 +54,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "Productivity browser extension",
     technologies: [],
     description: "A browser extension to save, organize, and manage open tabs into named groups for better productivity.",
-    imgUrl: "/images/tabit-ss.png",
+    imgUrl: "/tejas-athalye-portfolio/images/tabit-ss.png",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/TabIt",
     websiteUrl: "",
@@ -65,7 +65,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "Generative AI document assistant",
     technologies: [],
     description: "A generative AI-powered tool for interactive communication with PDF documents using Retrieval-Augmented Generation (RAG).",
-    imgUrl: "/images/chatdocsai.jpeg",
+    imgUrl: "/tejas-athalye-portfolio/images/chatdocsai.jpeg",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/ChatDocs-AI",
     websiteUrl: "",
@@ -76,7 +76,7 @@ export const ProjectList: ProjectType[] = [
     subtitle: "AI-driven video authentication",
     technologies: [],
     description: "A digital forensic tool for detecting video tampering, deepfakes, and verifying authenticity using metadata analysis and frame inspection.",
-    imgUrl: "/images/vidforensics.jpeg",
+    imgUrl: "/tejas-athalye-portfolio/images/vidforensics.jpeg",
     videoUrl: "",
     githubUrl: "https://github.com/LitZeus/VidForensicsTool",
     websiteUrl: "",
