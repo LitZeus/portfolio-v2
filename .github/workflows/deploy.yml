@@ -31,7 +31,9 @@ jobs:
         run: npm ci
 
       - name: Build Next.js site
-        run: npm run build
+        run: |
+          npm run build
+          touch out/.nojekyll
 
       - name: List out directory contents
         run: ls -alh ./out
