@@ -24,15 +24,16 @@ export default function Contact() {
   }, []);
 
   return (
-    <section className="p-4 pb-12 w-full max-w-[80%] md:max-w-[72%] lg:max-w-full m-auto overflow-hidden 2xl:overflow-visible">
-      <div className="grid grid-rows-2 grid-cols-2 gap-5 max-w-2xl mx-auto">
+    <section className="p-2 sm:p-4 pb-8 sm:pb-12 w-full max-w-[95%] md:max-w-[72%] lg:max-w-full m-auto overflow-hidden 2xl:overflow-visible">
+      <div className="grid grid-rows-2 grid-cols-2 gap-3 sm:gap-5 max-w-2xl mx-auto">
         <Card className="col-span-full lg:row-start-1 lg:row-span-1 lg:col-span-1 opacity-0 mobile-animation emailCard">
-          <CardBody className="flex flex-row justify-center items-center gap-2">
+          <CardBody className="flex flex-row justify-center items-center gap-2 p-3 sm:p-4">
             <Button
               onClick={() =>
                 (location.href = `mailto:${email}?subject=Mail from your Portfolio`)
               }
               startContent={<MailSVG />}
+              className="text-sm sm:text-base"
             >
               {email}
             </Button>
@@ -50,10 +51,12 @@ export default function Contact() {
             className="min-h-full flex justify-center items-center"
           >
             <CardBody
-              className="flex justify-center items-center"
+              className="flex justify-center items-center p-3 sm:p-4"
               onClick={() => window.open(`${linkedIn}`, "_blank")}
             >
-              <LinkedInSVG />
+              <div className="w-6 h-6 sm:w-8 sm:h-8">
+                <LinkedInSVG />
+              </div>
             </CardBody>
           </Link>
         </Card>
@@ -68,17 +71,19 @@ export default function Contact() {
             target="_blank"
             className="min-h-full flex justify-center items-center"
           >
-            <CardBody className="flex justify-center items-center gap-2">
-              <GithubSVG />
-              <h1 className="text-3xl font-bold">Github Profile</h1>
-              <p className="text-xl text-gray-400 text-center">
+            <CardBody className="flex justify-center items-center gap-2 p-3 sm:p-4">
+              <div className="w-6 h-6 sm:w-8 sm:h-8">
+                <GithubSVG />
+              </div>
+              <h1 className="text-2xl sm:text-3xl font-bold">Github Profile</h1>
+              <p className="text-base sm:text-xl text-gray-400 text-center">
                 Find more of my repositories
               </p>
             </CardBody>
           </Link>
         </Card>
 
-        <div className="col-span-full mt-8">
+        <div className="col-span-full mt-6 sm:mt-8">
           <Form />
         </div>
       </div>

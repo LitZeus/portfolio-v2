@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 export * from "./contactDataType";
 export * from "./highlightsType";
 export * from "./project";

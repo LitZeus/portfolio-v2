@@ -62,15 +62,15 @@ export const Project = (project: ProjectType) => {
       initial="hidden"
       animate={controls}
       variants={fadeInUp}
-      className="w-full max-w-[90%] md:max-w-[76%] lg:max-w-full mx-auto px-6 sm:px-10 md:px-12 py-6"
+      className="w-full max-w-[95%] md:max-w-[76%] lg:max-w-full mx-auto px-3 sm:px-6 md:px-10 py-4 sm:py-6"
     >
-      <div className="flex flex-col gap-8 lg:grid lg:grid-cols-2">
+      <div className="flex flex-col gap-6 sm:gap-8 lg:grid lg:grid-cols-2">
         {/* Title (Visible first on small screens) */}
         <motion.h2
           variants={fadeInUp}
-          className="text-3xl font-bold text-white mb-2 flex items-center gap-2 lg:hidden"
+          className="text-2xl sm:text-3xl font-bold text-white mb-2 flex items-center gap-2 lg:hidden"
         >
-          <span className="bg-[#303036] p-2 rounded-md">{icon}</span>
+          <span className="bg-[#303036] p-1.5 sm:p-2 rounded-md">{icon}</span>
           {title}
         </motion.h2>
 
@@ -92,10 +92,10 @@ export const Project = (project: ProjectType) => {
             <Image
               src={imgUrl}
               alt={title}
-              width={800} // Adjust as needed
-              height={600} // Adjust as needed
+              width={800}
+              height={600}
               className="rounded-xl w-full object-cover"
-              unoptimized // Required for GitHub Pages deployment
+              unoptimized
             />
           )}
         </motion.div>
@@ -103,36 +103,36 @@ export const Project = (project: ProjectType) => {
         {/* Description Box */}
         <motion.div
           variants={fadeInUp}
-          className="flex flex-col justify-between bg-[#1E1E1E] p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+          className="flex flex-col justify-between bg-[#1E1E1E] p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           {/* Title (Hidden on small screens, shown on large screens) */}
-          <h2 className="text-3xl font-bold text-white mb-2 flex items-center gap-2 hidden lg:flex">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 flex items-center gap-2 hidden lg:flex">
             <span className="bg-[#303036] p-2 rounded-md">{icon}</span>
             {title}
           </h2>
 
-          <p className="text-gray-400 text-lg">{description}</p>
-          <div className="flex flex-wrap gap-2 mt-4">
+          <p className="text-gray-400 text-base sm:text-lg">{description}</p>
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3 sm:mt-4">
             {technologies.map(
               ({ name, icon }: TechnologyType, index: number) => (
                 <Chip
                   key={`technology-item-${index}`}
                   size="sm"
-                  className="bg-[#2A2A2E] text-gray-300 hover:bg-[#3A3A3E] transition-colors"
+                  className="bg-[#2A2A2E] text-gray-300 hover:bg-[#3A3A3E] transition-colors text-xs sm:text-sm"
                 >
-                  <span className="flex items-center gap-2">{name}</span>
+                  <span className="flex items-center gap-1 sm:gap-2">{name}</span>
                 </Chip>
               )
             )}
           </div>
 
-          <div className="mt-6 flex gap-4">
+          <div className="mt-4 sm:mt-6 flex gap-3 sm:gap-4">
             {websiteUrl !== "NONE" && (
               <Link
                 href={websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-full bg-[#3B82F6] text-white py-2 rounded-md hover:bg-[#2563EB] transition-colors"
+                className="flex items-center justify-center w-full bg-[#3B82F6] text-white py-1.5 sm:py-2 rounded-md hover:bg-[#2563EB] transition-colors text-sm sm:text-base"
               >
                 <LinkSVG />
               </Link>
@@ -142,7 +142,7 @@ export const Project = (project: ProjectType) => {
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full bg-[#6B7280] text-white py-2 rounded-md hover:bg-[#4B5563] transition-colors"
+              className="flex items-center justify-center w-full bg-[#6B7280] text-white py-1.5 sm:py-2 rounded-md hover:bg-[#4B5563] transition-colors text-sm sm:text-base"
             >
               <GithubSVG />
             </Link>
