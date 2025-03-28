@@ -1,6 +1,3 @@
-import { FaGlobe, FaLaptopCode, FaRobot } from "react-icons/fa";
-import { GiArtificialIntelligence } from "react-icons/gi";
-import { MdOutlineHealthAndSafety } from "react-icons/md";
 import {
     ShadcnLandingSVG
 } from "../components/ui/icons";
@@ -8,64 +5,15 @@ import { ProjectType } from "../types";
 
 export const ProjectList: ProjectType[] = [
   {
-    icon: <GiArtificialIntelligence />,
-    title: "Violence & Vandalism Detection",
-    subtitle: "Computer Vision",
-    description:
-      "A deep learning model that detects violence and vandalism in surveillance footage. The model uses a combination of CNN and LSTM networks to process video frames and classify them as violent or non-violent.",
+    icon: <ShadcnLandingSVG />,
+    title: "Detection of Varicose Veins Using YOLO",
+    subtitle: "AI-powered medical diagnosis",
+    technologies: [],
+    description: "An AI-powered system for early diagnosis and continuous monitoring of varicose veins using YOLO deep learning algorithm.",
     imgUrl: "/images/vv-detection.jpeg",
     videoUrl: "",
-    technologies: [],
-    githubUrl: "https://github.com/tejas-athalye/Violence-Detection",
+    githubUrl: "https://github.com/LitZeus/VV-detection",
     websiteUrl: "",
-  },
-  {
-    icon: <FaRobot />,
-    title: "Autonomous Drone Navigation",
-    subtitle: "Robotics & Computer Vision",
-    description:
-      "An autonomous drone navigation system that uses computer vision and deep learning to navigate through indoor environments. The system uses a combination of SLAM and deep learning for obstacle avoidance and path planning.",
-    imgUrl: "/images/drone-nav.jpeg",
-    videoUrl: "",
-    technologies: [],
-    githubUrl: "https://github.com/tejas-athalye/Autonomous-Drone-Navigation",
-    websiteUrl: "",
-  },
-  {
-    icon: <MdOutlineHealthAndSafety />,
-    title: "Health Monitoring System",
-    subtitle: "IoT & Machine Learning",
-    description:
-      "A real-time health monitoring system that uses IoT sensors to collect vital signs and machine learning to predict potential health risks. The system includes a web dashboard for monitoring and alerts.",
-    imgUrl: "/images/health-monitor.jpeg",
-    videoUrl: "",
-    technologies: [],
-    githubUrl: "https://github.com/tejas-athalye/Health-Monitoring-System",
-    websiteUrl: "",
-  },
-  {
-    icon: <FaLaptopCode />,
-    title: "Code Review Assistant",
-    subtitle: "Natural Language Processing",
-    description:
-      "An AI-powered code review assistant that uses natural language processing to analyze code changes and provide suggestions for improvements. The system integrates with GitHub and provides automated code reviews.",
-    imgUrl: "/images/code-review.jpeg",
-    videoUrl: "",
-    technologies: [],
-    githubUrl: "https://github.com/tejas-athalye/Code-Review-Assistant",
-    websiteUrl: "",
-  },
-  {
-    icon: <FaGlobe />,
-    title: "Portfolio Website",
-    subtitle: "Web Development",
-    description:
-      "A modern, responsive portfolio website built with Next.js and TypeScript. Features include dark mode, animations, and a contact form. The website is optimized for performance and SEO.",
-    imgUrl: "/images/portfolio.jpeg",
-    videoUrl: "",
-    technologies: [],
-    githubUrl: "https://github.com/tejas-athalye/tejas-athalye-portfolio",
-    websiteUrl: "https://tejas-athalye.github.io/tejas-athalye-portfolio/",
   },
   {
     icon: <ShadcnLandingSVG />,
