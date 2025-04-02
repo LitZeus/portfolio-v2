@@ -44,6 +44,12 @@ export const NavbarSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  const isActive = (url: string) => {
+    if (url === "/" && pathname === "/") return true;
+    if (url !== "/" && pathname?.startsWith(url)) return true;
+    return false;
+  };
+
   return (
     <div className="h-[80px]">
       <motion.div
@@ -70,36 +76,34 @@ export const NavbarSection = () => {
               "flex",
               "relative",
               "text-sm",
-              "text-default-500",
               "font-medium",
               "items-center",
-              "hover:text-opacity-60",
-              "data-[active=true]:after:content-['']",
-              "data-[active=true]:after:absolute",
-              "data-[active=true]:after:bottom-[-4px]",
-              "data-[active=true]:after:left-0",
-              "data-[active=true]:after:right-0",
-              "data-[active=true]:after:h-[2px]",
-              "data-[active=true]:after:rounded-[2px]",
-              "data-[active=true]:after:bg-accent",
-              "data-[active=true]:text-default-foreground",
-              "data-[active=true]:dark:bg-default rounded-lg",
+              "hover:text-opacity-80",
             ],
           }}
           isBlurred
         >
           <NavbarContent className="sm:flex gap-4" justify="center">
-            {routes.map((section: routeProps) => (
-              <NavbarItem key={section.url} isActive={pathname === section.url}>
-                <Link
-                  className="px-3 py-1.5 rounded-lg"
-                  color="foreground"
-                  href={section.url}
+            {routes.map((section: routeProps) => {
+              const active = isActive(section.url);
+              return (
+                <NavbarItem 
+                  key={section.url}
+                  isActive={active}
                 >
-                  {section.label}
-                </Link>
-              </NavbarItem>
-            ))}
+                  <Link
+                    className={`px-3 py-1.5 rounded-lg transition-colors ${
+                      active
+                        ? "bg-white/10 text-white font-semibold"
+                        : "text-[#71717A] hover:text-white"
+                    }`}
+                    href={section.url}
+                  >
+                    {section.label}
+                  </Link>
+                </NavbarItem>
+              );
+            })}
           </NavbarContent>
         </Navbar>
       </motion.div>

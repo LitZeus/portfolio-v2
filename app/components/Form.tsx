@@ -25,9 +25,11 @@ export function Form() {
       }
 
       const formData = {
+        to_name: "Tejas Athalye",
         from_name: name,
         from_email: email,
-        message: message
+        message: message,
+        reply_to: email  // Add this to ensure replies go to the sender
       };
 
       await emailjs.send(
