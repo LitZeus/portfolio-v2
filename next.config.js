@@ -16,8 +16,8 @@ const nextConfig = {
       },
     ],
   },
-  basePath: '/tejas-athalye-portfolio',
-  assetPrefix: '/tejas-athalye-portfolio/',
+  basePath: isGitHubPages ? '/tejas-athalye-portfolio' : '',
+  assetPrefix: isGitHubPages ? '/tejas-athalye-portfolio/' : '',
   trailingSlash: true,
   distDir: 'dist',
   // This is important for GitHub Pages
