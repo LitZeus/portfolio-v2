@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+const isGitHubPages = process.env.DEPLOY_TARGET === 'github';
+
 const nextConfig = {
   output: 'export',
   images: {
