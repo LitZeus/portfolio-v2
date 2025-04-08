@@ -72,12 +72,11 @@ export default function Home() {
                 <SocialLinks />
               </div>
               <a
-                href="/resume.pdf"
-                download
+                href="https://litzeus.github.io/resume-pipeline/Resume_Tejas_Athalye.pdf"
                 className="flex items-center justify-center gap-2 w-full bg-white/20 backdrop-blur-md text-white py-2.5 sm:py-3 rounded-full hover:bg-white/30 transition-all text-sm sm:text-base font-medium shadow-lg"
               >
                 <FaDownload className="text-base sm:text-lg" />
-                Download Resume
+                View Resume
               </a>
             </div>
           </div>
@@ -159,12 +158,11 @@ export default function Home() {
             <div className="text-xl text-blue/80">{profession}</div>
             <SocialLinks />
             <a
-              href="/resume.pdf"
-              download
+              href="https://litzeus.github.io/resume-pipeline/Resume_Tejas_Athalye.pdf"
               className="flex items-center gap-2 px-4 py-2 bg-blue text-white rounded-full hover:bg-blue/90 transition-colors"
             >
               <FaDownload />
-              Download Resume
+              View Resume
             </a>
           </CardBody>
         </Card>
